@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- DW6 -->
+<head>
+<!-- Copyright 2005 Macromedia, Inc. All rights reserved. -->
+<title>Home Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="source/mm_health_nutr.css" type="text/css" />
+<script language="JavaScript" type="text/javascript">
+//--------------- LOCALIZEABLE GLOBALS ---------------
+var d=new Date();
+var monthname=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+//Ensure correct for language. English is "January 1, 2004"
+var TODAY = monthname[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+//---------------   END LOCALIZEABLE   ---------------
+</script>
+</head>
+<body bgcolor="#F4FFE4">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#D5EDB3">
+    <td width="382" colspan="3" rowspan="2"><img src="source/mm_health_photo.jpg" alt="Header image" width="382" height="101" border="0" /></td>
+    <td width="378" height="50" colspan="3" id="logo" valign="bottom" align="center" nowrap="nowrap">清闲一刻    </td>
+    <td width="100%" rowspan="2">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#D5EDB3">
+    <td height="51" colspan="3" id="tagline" valign="top" align="center">relax yourself</td>
+  </tr>
+
+  <tr>
+    <td colspan="7" bgcolor="#5C743D"><img src="source/mm_spacer.gif" alt="" width="1" height="2" border="0" /></td>
+  </tr>
+
+  <tr>
+    <td colspan="7" bgcolor="#99CC66" background="source/mm_dashed_line.gif"><img src="source/mm_dashed_line.gif" alt="line decor" width="4" height="3" border="0" /></td>
+  </tr>
+
+  <tr bgcolor="#99CC66">
+  	<td colspan="7" id="dateformat" height="20">&nbsp;&nbsp;<marquee width="100%" scrollamount="3"><script language="JavaScript" type="text/javascript"> 
+      document.write(TODAY);	</script>晴</marquee>	</td>
+  </tr>
+  <tr>
+    <td colspan="7" bgcolor="#99CC66" background="source/mm_dashed_line.gif"><img src="source/mm_dashed_line.gif" alt="line decor" width="4" height="3" border="0" /></td>
+  </tr>
+
+  <tr>
+    <td colspan="7" bgcolor="#5C743D"><img src="source/mm_spacer.gif" alt="" width="1" height="2" border="0" /></td>
+  </tr>
+
+ <tr>
+    <td width="165" valign="top" bgcolor="#5C743D">
+	<table border="0" cellspacing="0" cellpadding="0" width="165" id="navigation">
+        <tr>
+          <td width="165">&nbsp;<br />
+		 &nbsp;<br /></td>
+        </tr>
+        <tr>
+          <td width="165"><a href="介绍.html" class="navText">网站简介</a></td>
+        </tr>
+        <tr>
+          <td width="165"><a href="视频.html" class="navText">Mv欣赏</a></td>
+        </tr>
+        <tr>
+          <td width="165"><a href="歌手.html" class="navText">歌手</a></td>
+        </tr>
+        <tr>
+          <td width="165"><a href="图片.html" class="navText">每日推荐</a></td>
+        </tr>
+        <tr>
+          <td width="165"><a href="个人中心.html" class="navText">个人中心</a></td>
+        </tr>
+		<tr>
+          <td width="165"><a href="下载.html" class="navText">音乐下载</a></td>
+        </tr>
+      </table>
+ 	?<br />
+  	&nbsp;<br />
+  	&nbsp;<br />
+  	&nbsp;<br /> 	</td>
+    <td width="50"><img src="source/mm_spacer.gif" alt="" width="50" height="1" border="0" /></td>
+    <td width="305" colspan="2" valign="top"><img src="source/mm_spacer.gif" alt="" width="305" height="1" border="0" /><br />
+	&nbsp;<br />
+	&nbsp;<br />
+	<table border="0" cellspacing="0" cellpadding="0" width="305">
+        <tr>
+          <td class="pageName">Welcome to 163cloudmusic</td>
+		</tr>
+
+		<tr>
+          <td class="bodyText"><p>欢迎来到每日推荐</p>
+            <p>我写你妈</p>
+            <p>那没事了</p>
+            <p>我要死了</p>
+            <p>&nbsp;</p>		</td>
+        </tr>
+      </table>
+	<br />
+	&nbsp;<br />	</td>
+    <td width="50">&nbsp;</td>
+    <td width="190" valign="top"><br />
+		&nbsp;<img src="source/mm_spacer.gif" alt="" width="50" height="1" border="0" /></td>
+        <td width="100%"><script language="">
+//设置marquee的宽度(in pixels)
+var marqueewidth=160
+//设置marquee的高度
+var marqueeheight=50
+//设置marquee的速度
+var speed=3
+//设置marquee的显示内容
+/////////////////////////////////////////////////////////////////
+
+
+var marqueecontents='<center><SPAN STYLE="FONT-FAMILY: 宋体; FONT-SIZE: 9pt; LINE-HEIGHT: 28px">Welcome<br>这里是你的网上精神家园<br>这里是。。。。<br>这里是。。。。</span></center>'
+//////////////////////////////////////////////////////////////////
+if (document.all)
+document.write('<marquee direction="up" scrollAmount='+speed+' style="width:'+marqueewidth+';height:'+marqueeheight+'">'+marqueecontents+'</marquee>')
+
+function regenerate(){
+window.location.reload()
+}
+function regenerate2(){
+if (document.layers){
+setTimeout("window.onresize=regenerate",450)
+intializemarquee()
+}
+}
+
+function intializemarquee(){
+document.cmarquee01.document.cmarquee02.document.write(marqueecontents)
+document.cmarquee01.document.cmarquee02.document.close()
+thelength=document.cmarquee01.document.cmarquee02.document.height
+scrollit()
+}
+
+function scrollit(){
+if (document.cmarquee01.document.cmarquee02.top>=thelength*(-1)){
+document.cmarquee01.document.cmarquee02.top-=speed
+setTimeout("scrollit()",100)
+}
+else{
+document.cmarquee01.document.cmarquee02.top=marqueeheight
+scrollit()
+}
+}
+
+window.onload=regenerate2
+</script>
+  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="100%" height="20%">
+    <param name="movie" value="source/flash.swf" />
+    <param name="quality" value="high" />
+    <embed src="source/flash.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="343" height="72"></embed>
+  </object></td>
+  </tr>
+  <tr>
+    <td width="165">&nbsp;</td>
+    <td width="50">&nbsp;</td>
+    <td width="167">&nbsp;</td>
+    <td width="138">&nbsp;</td>
+    <td width="50">&nbsp;</td>
+    <td width="190">&nbsp;</td>
+	<td width="100%">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

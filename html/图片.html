@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- DW6 -->
+<head>
+<!-- Copyright 2005 Macromedia, Inc. All rights reserved. -->
+<title>Catalog</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="source/mm_health_nutr.css" type="text/css" />
+<script language="JavaScript" type="text/javascript">
+//--------------- LOCALIZEABLE GLOBALS ---------------
+var d=new Date();
+var monthname=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+//Ensure correct for language. English is "January 1, 2004"
+var TODAY = monthname[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+//---------------   END LOCALIZEABLE   ---------------
+</script>
+<script language=JavaScript>
+<!-- Original:  Altan (snow@altan.hr) -->
+<!-- Web Site:  http://www.altan.hr/snow -->
+<!-- Smaller flakes, subtle snowfall variables, code beautifcation and makeSnow function by NoSLZZP -->
+
+var no = 8; // snow number
+var speed = 12; // smaller number moves the snow faster
+var snowflake = "img/small.gif";
+
+var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
+var ie4up = (document.all) ? 1 : 0;
+var dx, xp, yp;    // coordinate and position variables
+var am, stx, sty;  // amplitude and step variables
+var i, doc_width = 400, doc_height = 500;
+if (ns4up) {
+  doc_width = self.innerWidth;
+  doc_height = self.innerHeight;
+} else if (ie4up) {
+  doc_width = 500;
+  doc_height = 500;
+}
+dx = new Array();
+xp = new Array();
+yp = new Array();
+am = new Array();
+stx = new Array();
+sty = new Array();
+for (i = 0; i < no; ++ i) {  
+  dx[i] = 0;                        // set coordinate variables
+  xp[i] = Math.random()*(doc_width-50);  // set position variables
+  yp[i] = Math.random()*doc_height;
+  am[i] = Math.random()*20;         // set amplitude variables
+  stx[i] = 0.02 + Math.random()/10; // set step variables
+  sty[i] = 0.7 + Math.random();     // set step variables
+  if (ns4up) {                      // set layers
+    if (i == 0) {
+      document.write("<layer name=\"dot"+ i +"\" left=\"15\" ");
+      document.write("top=\"15\" visibility=\"show\"><img src=\"");
+      document.write(snowflake + "\" border=\"0\"></layer>");
+    } else {
+      document.write("<layer name=\"dot"+ i +"\" left=\"15\" ");
+      document.write("top=\"15\" visibility=\"show\"><img src=\"");
+      document.write(snowflake + "\" border=\"0\"></layer>");
+    }
+  } else if (ie4up) {
+    if (i == 0) {
+      document.write("<div id=\"dot"+ i +"\" style=\"POSITION: ");
+      document.write("absolute; Z-INDEX: "+ i +"; VISIBILITY: ");
+      document.write("visible; TOP: 15px; LEFT: 15px;\"><img src=\"");
+      document.write(snowflake + "\" border=\"0\"></div>");
+    } else {
+      document.write("<div id=\"dot"+ i +"\" style=\"POSITION: ");
+      document.write("absolute; Z-INDEX: "+ i +"; VISIBILITY: ");
+      document.write("visible; TOP: 15px; LEFT: 15px;\"><img src=\"");
+      document.write(snowflake + "\" border=\"0\"></div>");
+    }
+  }
+}
+function snowNS() {  // Netscape main animation function
+  for (i = 0; i < no; ++ i) {  // iterate for every dot
+    yp[i] += sty[i];
+    if (yp[i] > doc_height-50) {
+      xp[i] = Math.random()*(doc_width-am[i]-30);
+      yp[i] = 0;
+      stx[i] = 0.02 + Math.random()/10;
+      sty[i] = 0.7 + Math.random();
+      doc_width = self.innerWidth;
+      doc_height = self.innerHeight;
+    }
+    dx[i] += stx[i];
+    document.layers["dot"+i].top = yp[i];
+    document.layers["dot"+i].left = xp[i] + am[i]*Math.sin(dx[i]);
+  }
+  setTimeout("snowNS()", speed);
+}
+
+function snowIE() {  // IE main animation function
+  for (i = 0; i < no; ++ i) {  // iterate for every dot
+    yp[i] += sty[i];
+    if (yp[i] > doc_height-50) {
+      xp[i] = Math.random()*(doc_width-am[i]-30);
+      yp[i] = 0;
+      stx[i] = 0.02 + Math.random()/10;
+      sty[i] = 0.7 + Math.random();
+      doc_width = document.body.clientWidth;
+      doc_height = document.body.clientHeight;
+    }
+    dx[i] += stx[i];
+    document.all["dot"+i].style.pixelTop = yp[i];
+    document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
+  }
+  setTimeout("snowIE()", speed);
+}
+
+if (ns4up) {
+  snowNS();
+} else if (ie4up) {
+  snowIE();
+}
+</script>
+</head>
+<body bgcolor="#F4FFE4">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#D5EDB3">
+    <td width="382" colspan="2" rowspan="2"><img src="source/mm_health_photo.jpg" alt="Header image" width="382" height="101" border="0" /></td>
+    <td width="378" height="50" id="logo" valign="bottom" align="center" nowrap="nowrap">清闲一刻</td>
+    <td width="100%">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#D5EDB3">
+    <td height="51" id="tagline" valign="top" align="center">relax yourself</td>
+	<td width="100%">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td colspan="4" bgcolor="#5C743D"><img src="source/mm_spacer.gif" alt="" width="1" height="2" border="0" /></td>
+  </tr>
+
+  <tr>
+    <td colspan="4" bgcolor="#99CC66" background="source/mm_dashed_line.gif"><img src="source/mm_dashed_line.gif" alt="line decor" width="4" height="3" border="0" /></td>
+  </tr>
+
+  <tr bgcolor="#99CC66">
+  <td>&nbsp;</td>
+  	<td colspan="3" id="dateformat" height="20"><a href="main.html">HOME</a>&nbsp;&nbsp;::&nbsp;&nbsp;<script language="JavaScript" type="text/javascript">
+      document.write(TODAY);	</script>
+  	歌手	</td>
+  </tr>
+
+  <tr>
+    <td colspan="4" bgcolor="#99CC66" background="source/mm_dashed_line.gif"><img src="source/mm_dashed_line.gif" alt="line decor" width="4" height="3" border="0" /></td>
+  </tr>
+
+  <tr>
+    <td colspan="4" bgcolor="#5C743D"><img src="source/mm_spacer.gif" alt="" width="1" height="2" border="0" /></td>
+  </tr>
+ <tr>
+    <td width="40">&nbsp;</td>
+    <td colspan="2" valign="top">&nbsp;<br />
+    &nbsp;<br />
+    <table border="0" cellspacing="0" cellpadding="2" width="610">
+        <tr>
+          <td colspan="7" class="pageName">歌手</td>
+        </tr>
+		<tr>
+          <td width="22%" height="110"><img src="img/img1.jpg" width="160" height="120" /></td>
+		  <td>&nbsp;</td>
+		  <td width="22%" height="110"><img src="img/img2.jpg" width="160" height="120" /></td>
+		  <td>&nbsp;</td>
+		  <td width="22%" height="110"><img src="img/img3.jpg" width="160" height="120" /></td>
+		  <td>&nbsp;</td>
+		  <td width="22%" height="110"><img src="img/img4.jpg" width="160" height="120" /></td>
+        </tr>
+		<tr>
+          <td class="detailText" valign="top" nowrap="nowrap"><a href="javascript:;">林俊杰</a><br />
+          introduction</td>
+		  <td>&nbsp;</td>
+		   <td class="detailText" valign="top" nowrap="nowrap"><a href="javascript:;">邓紫棋</a><br />
+introduction</td>
+		 <td>&nbsp;</td>
+		   <td class="detailText" valign="top" nowrap="nowrap"><a href="javascript:;">陈奕迅</a><br />
+introduction</td>
+		 <td>&nbsp;</td>
+	      <td class="detailText" valign="top" nowrap="nowrap"><a href="javascript:;">周杰伦</a><br />
+introduction</td>
+        </tr>
+		<tr>
+			<td colspan="7">&nbsp;</td>
+		</tr>
+
+		<tr>
+          <td height="110"><img src="img/img5.jpg" width="160" height="120" /></td>
+		  <td>&nbsp;</td>
+		  <td height="110"><img src="img/img6.jpg" width="160" height="120" /></td>
+		  <td>&nbsp;</td>
+		  <td height="110"><img src="img/img7.jpg" width="162" height="123" /></td>
+		  <td>&nbsp;</td>
+		  <td height="110"><img src="img/img8.jpg" width="160" height="124" /></td>
+        </tr>
+		<tr>
+          <td class="detailText" valign="top" nowrap="nowrap"><a href="javascript:;">许嵩</a><br />
+introduction</td>
+		  <td>&nbsp;</td>
+		   <td class="detailText" valign="top" nowrap="nowrap"><a href="javascript:;">Taylor Swift</a><br />
+introduction</td>
+		 <td>&nbsp;</td>
+		   <td class="detailText" valign="top" nowrap="nowrap"><a href="javascript:;">Justin Bieber</a><br />
+introduction</td>
+		 <td>&nbsp;</td>
+		   <td class="detailText" valign="top" nowrap="nowrap"><a href="javascript:;">张学友</a><br />
+introduction</td>
+        </tr>
+
+		<tr>
+			<td colspan="7">&nbsp;</td>
+		</tr>
+      </table>
+	</td>
+    <td width="100%">&nbsp;</td>
+  </tr>
+
+ <tr>
+    <td width="40">&nbsp;</td>
+    <td width="342">&nbsp;</td>
+    <td width="378">&nbsp;</td>
+	<td width="100%">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>
